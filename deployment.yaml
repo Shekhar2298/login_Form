@@ -2,19 +2,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
 name: login-form
+
 spec:
 replicas: 2
+
 selector:
 matchLabels:
 app: login-form
+
 template:
 metadata:
 labels:
 app: login-form
+
+
 spec:
-containers:
-- name: login-form
-image: nginx
-ports:
-- containerPort: 80
+  containers:
+    - name: login-form
+      image: 756400417557.dkr.ecr.us-east-1.amazonaws.com/login-form:latest
+      ports:
+        - containerPort: 80
+
 
